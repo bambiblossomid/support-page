@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support & Links - Bambiblossom.id</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anybody:wght@400;700&family=Dancing+Script:wght@700&family=Josefin+Sans:wght@400;600;700&family=Playfair+Display:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <style>
+        :root {
+            --pink-bright: #FF69B4;
+            --maroon: #800000;
+            --deep-purple: #8B008B;
+            --text-color: #4A4A4A;
+            --soft-text: #6b5b5b;
+        }
+
+        body {
+            font-family: 'Anybody', sans-serif;
+            background: linear-gradient(135deg, #ADD8E6 0%, #FFB6C1 50%, #E6E6FA 100%);
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0.12;
+            background-image: url('https://thumbs2.imgbox.com/6e/05/QhCdy1hh_t.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .sakura {
+            position: fixed;
+            top: -50px;
+            z-index: 20;
+            pointer-events: none;
+            animation: sakuraFall linear infinite;
+        }
+
+        @keyframes sakuraFall {
+            0% { transform: translateY(0) translateX(0) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.8; }
+            100% { transform: translateY(110vh) translateX(20vw) rotate(360deg); opacity: 0; }
+        }
+
+        .main-wrapper {
+            width: 100%;
+            max-width: 480px;
+            position: relative;
+            z-index: 10;
+            padding: 20px 15px;
+        }
+
+        .header-banner {
+            width: 100%;
+            height: auto;
+            display: block;
+            position: relative;
+            z-index: 11;
+            margin-bottom: -115px; 
+            border-radius: 30px 30px 0 0;
+            mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+        }
+
+        .container {
+            width: 100%;
+            background: linear-gradient(145deg, rgba(255, 182, 193, 0.92) 0%, rgba(255, 209, 220, 0.95) 30%, rgba(255, 228, 196, 0.92) 60%, rgba(224, 255, 255, 0.92) 90%);
+            border-radius: 40px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 10;
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            padding-top: 120px;
+            overflow: hidden;
+        }
+
+        .content {
+            padding: 0 25px 40px 25px;
+            text-align: center;
+        }
+
+        .avatar-wrapper {
+            width: 95px; height: 95px;
+            margin: -165px auto 25px; 
+            background: white;
+            padding: 6px;
+            border-radius: 50%;
+            box-shadow: 0 10px 25px rgba(218, 24, 132, 0.2);
+            position: relative;
+            z-index: 20; 
+        }
+
+        .avatar-inner {
+            width: 100%; height: 100%;
+            background: linear-gradient(135deg, #fff 0%, #FFE4E1 100%);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 45px;
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 42px;
+            margin: 10px 0 10px;
+            background: linear-gradient(to right, #FF0000, #FF69B4, #8A2BE2, #0000FF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .reward-box {
+            background: rgba(255, 255, 255, 0.4);
+            border: 2px dashed var(--pink-bright);
+            padding: 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            color: var(--deep-purple);
+            font-weight: 500;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        .reward-box strong { color: var(--deep-purple); font-weight: 700; }
+
+        .cta-text {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 15px;
+            color: var(--pink-bright);
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .links-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin: 20px 0 30px;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 14px 18px;
+            border-radius: 14px;
+            text-decoration: none;
+            font-family: 'Josefin Sans', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #ffffff;
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+            text-align: left;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            filter: brightness(1.1);
+            animation: pulse 0.8s ease-in-out infinite;
+        }
+
+        /* Styling khusus untuk ikon gambar di dalam tombol */
+        .btn i, .btn img.btn-custom-icon {
+            font-size: 1.3rem;
+            width: 26px;
+            height: 26px;
+            object-fit: contain;
+            text-align: center;
+        }
+
+        /* Brand Colors */
+        .kofi { background: #ff5f5f; }
+        .bmc { background: #ffdd00; color: #1a1a1a !important; }
+        .paypal { background: #003087; }
+        .trakteer { background: #ef2d5e; }
+        .lynk { background: #28a745; } 
+        .shopee { background: #ee4d2d; }
+        .web { background: #6a5acd; }
+
+        .reading-section {
+            margin: 20px 0;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.35);
+            border-radius: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .inline-brand {
+            color: #FF69B4; 
+            font-family: 'Dancing Script', cursive; 
+            font-weight: 700;
+            font-size: 24px;
+            display: inline-block;
+            vertical-align: middle;
+            margin: 0 2px;
+        }
+
+        .reading-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #FF69B4 0%, #8A2BE2 100%);
+            color: white;
+            text-decoration: none;
+            font-family: 'Josefin Sans', sans-serif;
+            font-weight: 700;
+            padding: 12px 40px;
+            border-radius: 50px;
+            box-shadow: 0 5px 15px rgba(255, 20, 147, 0.3);
+            transition: 0.3s;
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+        }
+
+        .reading-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(255, 20, 147, 0.5);
+            animation: pulse 0.8s ease-in-out infinite;
+        }
+
+        .divider {
+            font-size: 12px;
+            color: var(--pink-bright);
+            margin: 15px 0;
+            opacity: 0.6;
+        }
+
+        .signature {
+            margin-top: 15px;
+            padding-top: 20px;
+            border-top: 2px dashed rgba(255, 105, 180, 0.3);
+            text-align: center;
+        }
+
+        .brand-name {
+            font-family: 'Dancing Script', cursive;
+            color: #FF69B4;
+            font-size: 32px;
+            font-weight: 700;
+            display: block;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .footer {
+            font-family: 'Anybody', sans-serif;
+            color: #555555;
+            font-size: 15px;
+            line-height: 1.6;
+            text-align: center;
+            border-top: 2px dashed rgba(255, 105, 180, 0.4);
+            position: relative;
+            z-index: 9;
+            overflow: hidden;
+            padding: 30px 20px;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: url('https://images2.imgbox.com/54/8f/QMttbBnb_o.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center 40%;
+            opacity: 0.7;
+            z-index: -1;
+        }
+
+        .contact-text {
+            font-family: 'Josefin Sans', sans-serif;
+            font-weight: 700;
+            color: #8B008B;
+            margin-bottom: 15px;
+            font-size: 18px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .social-icons {
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .social-icon-box {
+            display: inline-block;
+            text-decoration: none;
+            background-color: #FFC0CB;
+            border-radius: 50%;
+            padding: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 2px solid #FF69B4;
+        }
+
+        .social-icon-box:hover {
+            background-color: #FF69B4;
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            border-color: #8B008B;
+        }
+
+        .social-icon-box img {
+            width: 32px;
+            height: 32px;
+            display: block;
+        }
+
+        .copyright {
+            margin-top: 20px;
+            color: #4A4A4A;
+            font-size: 13px;
+            position: relative;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body>
+
+    <script>
+        function createSakura() {
+            const sakura = document.createElement('div');
+            sakura.className = 'sakura';
+            sakura.innerHTML = '🌸';
+            sakura.style.left = Math.random() * 100 + 'vw';
+            sakura.style.animationDuration = Math.random() * 5 + 7 + 's';
+            sakura.style.fontSize = Math.random() * 15 + 15 + 'px';
+            document.body.appendChild(sakura);
+            setTimeout(() => sakura.remove(), 12000);
+        }
+        setInterval(createSakura, 600);
+    </script>
+
+    <div class="main-wrapper">
+        <img src="https://media.mayar.id/images/b1ac7ea4-e204-451e-9dbf-f88afc24cca7.jpeg" alt="Header" class="header-banner">
+        
+        <div class="container">
+            <div class="content">
+                <div class="avatar-wrapper">
+                    <div class="avatar-inner">🌸</div>
+                </div>
+
+                <h1>Hai, Bibliophile!</h1><br><br>
+
+                <div class="support-info">
+                    <div style="font-family: 'Josefin Sans', sans-serif; color: var(--maroon); font-size: 20px; font-weight: 700; margin-bottom: 8px;">Dukung cerita favoritmu di sini</div>
+                    <p style="font-family: 'Anybody', sans-serif; font-size: 14px; line-height: 1.6; color: #555; margin-bottom: 15px;">Dengan memberikan dukungan, kamu akan mendapatkan akses reward sebagai bentuk apresiasi.</p>
+                    <div class="reward-box">
+                        Setiap dukungan minimal <strong>IDR 1.000</strong> memungkinkanmu memperoleh akses hingga <strong>5 Bab</strong> lanjutan, dengan kontribusi sebesar <strong>Rp200</strong> per-<strong>Bab</strong>, dari cerita yang sedang kamu ikuti.<br>
+                    </div><br>
+                    <p class="cta-text">Pilih platform dukungan yang paling nyaman dan sesuai denganmu:</p>
+                </div>
+
+                <div class="links-grid">
+                    <a class="btn kofi" href="https://ko-fi.com/bambiblossomid" target="_blank">
+                        <img 
+src="https://czubox.art/wp-content/uploads/2025/03/kofilogo.png" alt="Lynk Icon" class="btn-custom-icon"> Ko-fi (Support TL-nim)
+                    </a>
+
+                    <a class="btn bmc" href="https://buymeacoffee.com/bambiblossom.id" target="_blank">
+                        <img 
+src="https://res2.weblium.site/res/63493ab16670e9000d2eb2b3/65143edd38165f00178960a4" alt="Lynk Icon" class="btn-custom-icon"> Buy Me a Coffee (Support TL-nim)
+                    </a>
+
+                    <a class="btn paypal" href="https://www.paypal.com/paypalme/bambiblossom520" target="_blank">
+                        <i class="fa-brands fa-paypal"></i> PayPal (Support TL-nim)
+                    </a>
+
+                    <a class="btn trakteer" href="https://trakteer.id/bambiblossom.id/tip" target="_blank">
+                        <img 
+src="https://edge-cdn.trakteer.id/images/mix/trakteer-icon-thumbnail.png?v=14-05-2025" alt="Lynk Icon" class="btn-custom-icon"> Trakteer (Support TL-nim)
+                    </a>
+
+                    <a class="btn lynk" href="https://lynk.id/bambiblossom.id/s/x1zm8nleq9dj" target="_blank">
+                        <img src="https://media.mayar.id/images/04f3dd44-4552-4074-9b41-7ac322b1206e.png" alt="Lynk Icon" class="btn-custom-icon"> LYNK.id (Chapter Support)
+                    </a>
+
+                    <a class="btn shopee" href="https://shopee.co.id/USERNAME" target="_blank">
+                        <img src="https://freelogopng.com/images/all_img/1656181355shopee-icon-white.png" alt="Shopee Icon" class="btn-custom-icon"> Shopee (Shop & Chapter Support)
+                    </a>
+
+                    <a class="btn web" href="https://bambi-blossom.myr.id/support" target="_blank">
+                        <i class="fa-solid fa-globe"></i> Web Support Page (Chapter Support)
+                    </a>
+                </div>
+
+                <div class="reading-section">
+                    <p style="font-family: 'Josefin Sans', sans-serif; font-size: 14px; line-height: 1.8; color: #333; margin-bottom: 15px;">
+                        Jangan lupa periksa juga daftar cerita menarik lainnya yang dikerjakan oleh 
+                        <span class="inline-brand">Bambiblossom.id</span>, 
+                        baik yang masih <em>on going</em> maupun yang telah <em>complete</em>.<br><br>
+                        Daftar Cerita lengkapnya dapat kamu temukan dengan menekan tombol di bawah ini:
+                    </p>
+                    <a href="#" class="reading-btn">Reading🕮List</a>
+                </div>
+
+                <div class="closing-message" style="margin-top: 35px; margin-bottom: 25px;">
+                    <div class="divider" style="margin-bottom: 15px; font-size: 18px; color: #D4AF37;">🌸</div>
+                    <div style="font-family: 'Playfair Display', serif; font-style: italic; font-size: 16px; line-height: 1.6; color: #5D001E; font-weight: 500;">
+                        <b>Our sincere gratitude goes to all supporters for the support you have given through this support page.<br>
+                        Your support means a great deal to us in keeping these stories alive.<br>
+                        We hope every chapter you read brings you enjoyment and brightens your day.<br>
+                        See you in the upcoming chapters and in many other stories to come.
+                    </div>
+                    <div class="divider" style="margin-top: 15px; font-size: 18px; color: #D4AF37;">🌸</div>
+                </div>
+
+                <div class="signature">
+                    <p style="font-family: 'Playfair Display'; font-style: italic; color: #8A2BE2; margin: 0; font-size: 20px;">Warmly,</p>
+                    <span style="display:inline-block; font-size: 24px; color: #FF69B4; margin: 10px 0; animation: pulse 1.5s infinite;">💖</span>
+                    <span class="brand-name">Bambiblossom.id</span>
+                </div>
+            </div>
+
+            <div class="footer">
+                <div class="contact-text">Contact Us:</div>
+                <div class="social-icons">
+                    <a href="mailto:bambiblossom.id@gmail.com" class="social-icon-box" target="_blank">
+                        <img src="https://cdn-icons-png.flaticon.com/512/281/281769.png" alt="Email">
+                    </a>
+                    <a href="https://api.whatsapp.com/send?phone=628978372752" class="social-icon-box" target="_blank">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3670/3670051.png" alt="WA">
+                    </a>
+                    <a href="https://t.me/bambiblossom_id" class="social-icon-box" target="_blank">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Tele">
+                    </a>
+                    <a href="https://bambi-blossom.myr.id/" class="social-icon-box" target="_blank">
+                        <img src="https://cdn-icons-png.flaticon.com/512/1006/1006771.png" alt="Website">
+                    </a>
+                </div>
+                <div class="copyright">
+                    © 2023 Bambi Blossom. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
