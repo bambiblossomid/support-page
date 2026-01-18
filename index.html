@@ -63,10 +63,10 @@
         /* RESPONSIVE WRAPPER */
         .main-wrapper {
             width: 95%;
-            max-width: 550px; /* Sedikit lebih lebar untuk PC agar proporsional */
+            max-width: 550px; 
             position: relative;
             z-index: 10;
-            padding: 40px 0; /* Memberi ruang atas bawah di PC */
+            padding: 40px 0; 
             margin: 0 auto;
         }
 
@@ -76,7 +76,7 @@
             display: block;
             position: relative;
             z-index: 11;
-            margin-bottom: -15%; /* Menggunakan persentase agar responsif */
+            margin-bottom: -15%; 
             border-radius: 30px 30px 0 0;
             mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
             -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
@@ -97,32 +97,34 @@
         }
 
         .content {
-            padding: 0 5% 40px 5%; /* Menggunakan % agar tidak sempit di HP */
+            padding: 0 5% 40px 5%; 
             text-align: center;
         }
 
+        /* --- PERBAIKAN DI SINI: MENGHILANGKAN LINGKARAN PUTIH --- */
         .avatar-wrapper {
             width: 95px; height: 95px;
-            margin: -155px auto 25px; /* Disesuaikan agar tetap pas di atas container */
-            background: white;
-            padding: 6px;
+            margin: -155px auto 25px; 
+            background: transparent; /* Diubah jadi transparan */
+            padding: 0;               /* Jarak tepi dihapus */
             border-radius: 50%;
-            box-shadow: 0 10px 25px rgba(218, 24, 132, 0.2);
+            box-shadow: none;         /* Bayangan putih dihapus */
             position: relative;
             z-index: 20; 
         }
 
         .avatar-inner {
             width: 100%; height: 100%;
-            background: linear-gradient(135deg, #fff 0%, #FFE4E1 100%);
+            background: transparent;  /* Gradasi putih dihapus */
             border-radius: 50%;
             display: flex; align-items: center; justify-content: center;
-            font-size: 45px;
+            font-size: 55px;          /* Ukuran Sakura sedikit diperbesar */
         }
+        /* --- AKHIR PERBAIKAN --- */
 
         h1 {
             font-family: 'Dancing Script', cursive;
-            font-size: clamp(32px, 8vw, 42px); /* Ukuran font fleksibel */
+            font-size: clamp(32px, 8vw, 42px); 
             margin: 10px 0 10px;
             background: linear-gradient(to right, #FF0000, #FF69B4, #8A2BE2, #0000FF);
             -webkit-background-clip: text;
@@ -171,7 +173,7 @@
             color: #ffffff;
             transition: transform 0.15s ease, box-shadow 0.15s ease;
             text-align: left;
-            word-break: break-word; /* Mencegah teks keluar box di HP kecil */
+            word-break: break-word; 
         }
 
         .btn:hover {
@@ -187,10 +189,9 @@
             height: 26px;
             object-fit: contain;
             text-align: center;
-            flex-shrink: 0; /* Ikon tidak gepeng */
+            flex-shrink: 0; 
         }
 
-        /* Brand Colors */
         .kofi { background: #ff5f5f; }
         .bmc { background: #ffdd00; color: #1a1a1a !important; }
         .paypal { background: #003087; }
@@ -302,7 +303,7 @@
             margin: 20px 0;
             display: flex;
             justify-content: center;
-            flex-wrap: wrap; /* Agar ikon turun ke bawah jika layar sangat sempit */
+            flex-wrap: wrap; 
             gap: 15px;
             position: relative;
             z-index: 10;
@@ -333,7 +334,6 @@
             z-index: 10;
         }
 
-        /* MEDIA QUERIES UNTUK HP KECIL */
         @media (max-width: 400px) {
             .container { padding-top: 80px; }
             .avatar-wrapper { margin-top: -130px; width: 80px; height: 80px; }
@@ -348,8 +348,9 @@
     <script>
         function createSakura() {
             const sakura = document.createElement('div');
+            const sakuraIcons = ['🌸'];
             sakura.className = 'sakura';
-            sakura.innerHTML = '🌸';
+            sakura.innerHTML = sakuraIcons[Math.floor(Math.random() * sakuraIcons.length)];
             sakura.style.left = Math.random() * 100 + 'vw';
             sakura.style.animationDuration = Math.random() * 5 + 7 + 's';
             sakura.style.fontSize = Math.random() * 15 + 15 + 'px';
