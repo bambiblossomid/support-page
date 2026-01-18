@@ -60,12 +60,14 @@
             100% { transform: translateY(110vh) translateX(20vw) rotate(360deg); opacity: 0; }
         }
 
+        /* RESPONSIVE WRAPPER */
         .main-wrapper {
-            width: 100%;
-            max-width: 480px;
+            width: 95%;
+            max-width: 550px; /* Sedikit lebih lebar untuk PC agar proporsional */
             position: relative;
             z-index: 10;
-            padding: 20px 15px;
+            padding: 40px 0; /* Memberi ruang atas bawah di PC */
+            margin: 0 auto;
         }
 
         .header-banner {
@@ -74,7 +76,7 @@
             display: block;
             position: relative;
             z-index: 11;
-            margin-bottom: -115px; 
+            margin-bottom: -15%; /* Menggunakan persentase agar responsif */
             border-radius: 30px 30px 0 0;
             mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
             -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
@@ -89,18 +91,19 @@
             z-index: 10;
             border: 1px solid rgba(255, 255, 255, 0.7);
             backdrop-filter: blur(10px);
-            padding-top: 120px;
+            padding-top: 100px;
             overflow: hidden;
+            box-sizing: border-box;
         }
 
         .content {
-            padding: 0 25px 40px 25px;
+            padding: 0 5% 40px 5%; /* Menggunakan % agar tidak sempit di HP */
             text-align: center;
         }
 
         .avatar-wrapper {
             width: 95px; height: 95px;
-            margin: -165px auto 25px; 
+            margin: -155px auto 25px; /* Disesuaikan agar tetap pas di atas container */
             background: white;
             padding: 6px;
             border-radius: 50%;
@@ -119,7 +122,7 @@
 
         h1 {
             font-family: 'Dancing Script', cursive;
-            font-size: 42px;
+            font-size: clamp(32px, 8vw, 42px); /* Ukuran font fleksibel */
             margin: 10px 0 10px;
             background: linear-gradient(to right, #FF0000, #FF69B4, #8A2BE2, #0000FF);
             -webkit-background-clip: text;
@@ -168,6 +171,7 @@
             color: #ffffff;
             transition: transform 0.15s ease, box-shadow 0.15s ease;
             text-align: left;
+            word-break: break-word; /* Mencegah teks keluar box di HP kecil */
         }
 
         .btn:hover {
@@ -177,13 +181,13 @@
             animation: pulse 0.8s ease-in-out infinite;
         }
 
-        /* Styling khusus untuk ikon gambar di dalam tombol */
         .btn i, .btn img.btn-custom-icon {
             font-size: 1.3rem;
             width: 26px;
             height: 26px;
             object-fit: contain;
             text-align: center;
+            flex-shrink: 0; /* Ikon tidak gepeng */
         }
 
         /* Brand Colors */
@@ -227,12 +231,8 @@
             text-transform: uppercase;
             font-size: 14px;
             letter-spacing: 0.5px;
-        }
-
-        .reading-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 20px rgba(255, 20, 147, 0.5);
-            animation: pulse 0.8s ease-in-out infinite;
+            max-width: 100%;
+            box-sizing: border-box;
         }
 
         .divider {
@@ -302,7 +302,8 @@
             margin: 20px 0;
             display: flex;
             justify-content: center;
-            gap: 25px;
+            flex-wrap: wrap; /* Agar ikon turun ke bawah jika layar sangat sempit */
+            gap: 15px;
             position: relative;
             z-index: 10;
         }
@@ -318,16 +319,9 @@
             border: 2px solid #FF69B4;
         }
 
-        .social-icon-box:hover {
-            background-color: #FF69B4;
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-            border-color: #8B008B;
-        }
-
         .social-icon-box img {
-            width: 32px;
-            height: 32px;
+            width: 28px;
+            height: 28px;
             display: block;
         }
 
@@ -337,6 +331,15 @@
             font-size: 13px;
             position: relative;
             z-index: 10;
+        }
+
+        /* MEDIA QUERIES UNTUK HP KECIL */
+        @media (max-width: 400px) {
+            .container { padding-top: 80px; }
+            .avatar-wrapper { margin-top: -130px; width: 80px; height: 80px; }
+            .avatar-inner { font-size: 35px; }
+            .content { padding: 0 15px 30px 15px; }
+            .btn { font-size: 0.85rem; padding: 12px; }
         }
     </style>
 </head>
@@ -365,7 +368,7 @@
                     <div class="avatar-inner">🌸</div>
                 </div>
 
-                <h1>Hai, Bibliophile!</h1><br><br>
+                <h1>Hai, Bibliophile!</h1><br>
 
                 <div class="support-info">
                     <div style="font-family: 'Josefin Sans', sans-serif; color: var(--maroon); font-size: 20px; font-weight: 700; margin-bottom: 8px;">Dukung cerita favoritmu di sini</div>
@@ -378,13 +381,11 @@
 
                 <div class="links-grid">
                     <a class="btn kofi" href="https://ko-fi.com/bambiblossomid" target="_blank">
-                        <img 
-src="https://i.ibb.co.com/HTMkMsDP/ko-fi-logotype-27349.png" alt="Lynk Icon" class="btn-custom-icon"> Ko-fi (Support TL-nim)
+                        <img src="https://i.ibb.co.com/HTMkMsDP/ko-fi-logotype-27349.png" alt="Lynk Icon" class="btn-custom-icon"> Ko-fi (Support TL-nim)
                     </a>
 
                     <a class="btn bmc" href="https://buymeacoffee.com/bambiblossom.id" target="_blank">
-                        <img 
-src="https://res2.weblium.site/res/63493ab16670e9000d2eb2b3/65143edd38165f00178960a4" alt="Lynk Icon" class="btn-custom-icon"> Buy Me a Coffee (Support TL-nim)
+                        <img src="https://res2.weblium.site/res/63493ab16670e9000d2eb2b3/65143edd38165f00178960a4" alt="Lynk Icon" class="btn-custom-icon"> Buy Me a Coffee (Support TL-nim)
                     </a>
 
                     <a class="btn paypal" href="https://www.paypal.com/paypalme/bambiblossom520" target="_blank">
@@ -392,8 +393,7 @@ src="https://res2.weblium.site/res/63493ab16670e9000d2eb2b3/65143edd38165f001789
                     </a>
 
                     <a class="btn trakteer" href="https://trakteer.id/bambiblossom.id/tip" target="_blank">
-                        <img 
-src="https://edge-cdn.trakteer.id/images/mix/trakteer-icon-thumbnail.png?v=14-05-2025" alt="Lynk Icon" class="btn-custom-icon"> Trakteer (Support TL-nim)
+                        <img src="https://edge-cdn.trakteer.id/images/mix/trakteer-icon-thumbnail.png?v=14-05-2025" alt="Lynk Icon" class="btn-custom-icon"> Trakteer (Support TL-nim)
                     </a>
 
                     <a class="btn lynk" href="https://lynk.id/bambiblossom.id/s/x1zm8nleq9dj" target="_blank">
@@ -416,7 +416,7 @@ src="https://edge-cdn.trakteer.id/images/mix/trakteer-icon-thumbnail.png?v=14-05
                         baik yang masih <em>on going</em> maupun yang telah <em>complete</em>.<br><br>
                         Daftar Cerita lengkapnya dapat kamu temukan dengan menekan tombol di bawah ini:
                     </p>
-                    <a href="#" class="reading-btn">Reading📖List</a>
+                    <a href="#" class="reading-btn">Reading 📖 List</a>
                 </div>
 
                 <div class="closing-message" style="margin-top: 35px; margin-bottom: 25px;">
@@ -425,7 +425,7 @@ src="https://edge-cdn.trakteer.id/images/mix/trakteer-icon-thumbnail.png?v=14-05
                         <b>Our sincere gratitude goes to all supporters for the support you have given through this support page.<br>
                         Your support means a great deal to us in keeping these stories alive.<br>
                         We hope every chapter you read brings you enjoyment and brightens your day.<br>
-                        See you in the upcoming chapters and in many other stories to come.
+                        See you in the upcoming chapters and in many other stories to come.</b>
                     </div>
                     <div class="divider" style="margin-top: 15px; font-size: 18px; color: #D4AF37;">🌸</div>
                 </div>
